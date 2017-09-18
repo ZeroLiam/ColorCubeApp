@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Header from "./../components/Header";
 
-class Home extends Component {
+class ConnectCube extends Component {
   render() {
     return (
       <div className="Home">
-        <Header title="Color Cube"/>
+        <Header title="ConnectCube" />
       </div>
     );
   }
 }
 
-export default Home;
+export default ConnectCube;
