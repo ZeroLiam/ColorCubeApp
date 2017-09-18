@@ -47,6 +47,10 @@
   font-size: large;
 }
 
+.Home .app-content{
+  padding: 0 16px;
+}
+
 @keyframes App-logo-spin {
   0% { opacity: 0.6; }
   50% {  opacity: 1; }

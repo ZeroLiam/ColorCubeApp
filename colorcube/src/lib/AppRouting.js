@@ -8,6 +8,7 @@ import Impressive from './../containers/Impressive';
 import Expressive from './../containers/Expressive';
 import Gallery from './../containers/Gallery';
 import ConnectCube from './../containers/ConnectCube';
+import NoMatch from './../containers/NoMatch';
 
 const history = createBrowserHistory();
 
@@ -22,6 +23,7 @@ const AppRouting = () =>{
             <Route path="/expressive" component={Expressive}/>
             <Route path="/gallery" component={Gallery}/>
             <Route path="/connectcube" component={ConnectCube}/>
+            <Route component={NoMatch}/>
           </Switch>
       </Router>
     );
