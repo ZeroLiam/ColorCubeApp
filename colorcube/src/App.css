@@ -1,19 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700');
+
 .App {
   text-align: center;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
-  height: 80px;
+  height: 30px;
 }
 
 .App-header {
   background-color: #f4f4f4;
-  height: 75px;
+  font-family: 'Lato', sans-serif;
+  height: 45px;
   padding: 20px;
-  color: white;
+  color: #555359;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.App-header .header-menu, .App-header .header-dropdown{
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.App-header .header-content{
+  width: auto;
+  margin: 8px auto;
+  display: flex;
+}
+
+.header-content img{
+  margin: 0 12px;
+}
+
+.header-content h3{
+  display: inline-block;
+  margin: 4px auto;
+
 }
 
 .App-intro {
