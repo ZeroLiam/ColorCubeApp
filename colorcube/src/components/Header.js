@@ -3,10 +3,27 @@ import logo from './../assets/CuboLogo.svg';
 import './../App.css';
 
 class Header extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      openMenu: true
+    }
+  }
+
+  //openMenu
+  clickMenu(e){
+    let value = !this.state.openMenu;
+
+    this.setState({openMenu: value});
+
+    console.log("openMenu: ", this.state.openMenu);
+  }
+
   render(){
     return(
       <div className="App-header">
-        <div className="header-menu">
+        <div className="header-menu" onClick={(...args) => this.clickMenu(...args)} >
             <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
         <div className="header-content">
