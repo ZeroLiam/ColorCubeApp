@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './../assets/CuboLogo.svg';
+import MainMenu from './MainMenu';
+import $ from 'jquery';
 import './../App.css';
 
 class Header extends Component{
@@ -7,7 +9,7 @@ class Header extends Component{
     super(props);
 
     this.state = {
-      openMenu: true
+      openMenu: false
     }
   }
 
@@ -17,11 +19,18 @@ class Header extends Component{
 
     this.setState({openMenu: value});
 
-    console.log("openMenu: ", this.state.openMenu);
+    if(value){
+      $(".main-menu").removeClass("main-menu-out");
+      $(".main-menu").addClass("main-menu-in");
+    }else{
+      $(".main-menu").removeClass("main-menu-in");
+      $(".main-menu").addClass("main-menu-out");
+    }
   }
 
   render(){
     return(
+      <div className="header-component">
       <div className="App-header">
         <div className="header-menu" onClick={(...args) => this.clickMenu(...args)} >
             <i className="fa fa-bars" aria-hidden="true"></i>
@@ -33,6 +42,9 @@ class Header extends Component{
         <div className="header-dropdown">
             <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </div>
+
+      </div>
+        <MainMenu />
       </div>
     );
   }
