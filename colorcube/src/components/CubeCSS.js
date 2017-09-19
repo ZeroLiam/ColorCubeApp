@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import _ from 'lodash';
-import './../styles/component_styles.css';
+import './../styles/components_styles.css';
 
 class CubeCSS extends Component{
 
@@ -247,11 +247,11 @@ class CubeCSS extends Component{
           //Define the IDs for the faces
           let tbb = "cubo-" + numMapping + "-" + sideMapping; //tbb = Top-Back-Bottom
           //Define the faces tags
-          let fr_fig = <figure className={fr} id={tbb} style={{transform: dynamicStyle.dFront, backgroundColor: dynamicStyle.predefined}} key={fr}>{frontcounter}</figure>;
+          let fr_fig = <figure className={fr} id={tbb} style={{transform: dynamicStyle.dFront, backgroundColor: dynamicStyle.predefined}} key={fr}></figure>;
           let ri_fig = <figure className={ri} id={tbb} style={{transform: dynamicStyle.dRight, backgroundColor: dynamicStyle.predefined}} key={ri}></figure>;
-          let le_fig = <figure className={le} id={tbb} style={{transform: dynamicStyle.dLeft, backgroundColor: dynamicStyle.predefined}} key={le}>{sideMapping}</figure>;
-          let ba_fig = <figure className={ba} id={tbb} style={{transform: dynamicStyle.dBack, backgroundColor: dynamicStyle.predefined}} key={ba}>{frontcounter}</figure>;
-          let to_fig = <figure className={to} id={tbb} style={{transform: dynamicStyle.dTop, backgroundColor: dynamicStyle.predefined}} key={to}>{numMapping}</figure>;
+          let le_fig = <figure className={le} id={tbb} style={{transform: dynamicStyle.dLeft, backgroundColor: dynamicStyle.predefined}} key={le}></figure>;
+          let ba_fig = <figure className={ba} id={tbb} style={{transform: dynamicStyle.dBack, backgroundColor: dynamicStyle.predefined}} key={ba}></figure>;
+          let to_fig = <figure className={to} id={tbb} style={{transform: dynamicStyle.dTop, backgroundColor: dynamicStyle.predefined}} key={to}></figure>;
           let bo_fig = <figure className={bo} id={tbb} style={{transform: dynamicStyle.dBottom, backgroundColor: dynamicStyle.predefined}} key={bo}></figure>;
           //Define faces in divs
           rw.push(fr_fig);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import _ from 'lodash';
-import './../styles/component_styles.css';
+import './../styles/components_styles.css';
 
 class RotationSlider extends Component{
   constructor(props){
