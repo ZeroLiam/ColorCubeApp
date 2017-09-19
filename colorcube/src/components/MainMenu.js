@@ -10,23 +10,28 @@ class MainMenu extends Component {
       menuItems: [
         {
           title: "Constructive",
+          id: "constructive",
           link:"/constructive"
         },
         {
           title: "Impressive",
+          id: "impressive",
           link:"/impressive"
         },
         {
           title: "Expressive",
+          id: "expressive",
           link:"/expressive"
         },
         {
           title: "Gallery",
+          id: "gallery",
           link:"/gallery"
         },
         {
           title: "Connect Color Cube",
-          link:"/connectcube"
+          id: "connectcube",
+          link: "/connectcube"
         }
       ]
     }
@@ -36,7 +41,7 @@ class MainMenu extends Component {
     const listMenu = this.state.menuItems.map((item, key) =>{
       return(
         <a key={key} href={item.link}>
-          <li  className={window.location.pathname == item.link ? 'active' : 'deactive'}> {item.title} </li>
+          <li id={item.id} className={window.location.pathname == item.link ? 'active' : 'deactive'}> {item.title} </li>
         </a>
       )
     });

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './../assets/CuboLogo.svg';
 import MainMenu from './MainMenu';
 import $ from 'jquery';
-import './../App.css';
+import './../styles/components_styles.css';
 
 class Header extends Component{
   constructor(props) {
@@ -35,10 +35,12 @@ class Header extends Component{
         <div className="header-menu" onClick={(...args) => this.clickMenu(...args)} >
             <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
-        <div className="header-content">
+        <a href="/" className="header-content-link">
+          <div className="header-content">
             <img src={logo} className="App-logo" alt="logo" />
             <h3>{this.props.title}</h3>
-        </div>
+            </div>
+        </a>
         <div className="header-dropdown">
             <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </div>
