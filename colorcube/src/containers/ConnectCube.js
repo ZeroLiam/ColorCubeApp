@@ -5,7 +5,7 @@ class ConnectCube extends Component {
   render() {
     return (
       <div className="Home">
-        <Header title="ConnectCube" />
+        <Header title="Connect Color Cube" />
       </div>
     );
   }

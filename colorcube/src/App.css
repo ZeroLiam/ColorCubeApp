@@ -10,6 +10,10 @@
 }
 
 .App-header {
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+  box-shadow: 0px 0px 1px 1px #ccc;
   background-color: #f4f4f4;
   font-family: 'Lato', sans-serif;
   height: 45px;
