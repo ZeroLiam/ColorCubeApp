@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from "./../components/Header";
 import CubeCSS from "./../components/CubeCSS";
-import socketio from './../lib/ws_client';
+import ColorSlider from "./../components/ColorSlider";
+// import socketio from './../lib/ws_client';
 
 class ConnectCube extends Component {
   constructor(props) {
@@ -18,18 +19,18 @@ class ConnectCube extends Component {
   }
 
   componentDidMount(){
-    let dtobj = {};
-    socketio.on('connect', () => {
-      console.log("socketio.id: " + socketio.id); // Generate ID of client
-      //Change the id of client and send it to the server
-      dtobj.id = socketio.id;
-      dtobj.luz = [this.state.rcol,this.state.gcol, this.state.bcol];
-      socketio.emit('fromcube', dtobj);
-      });
-
-    socketio.on('disconnect', () =>{
-      console.log('user disconnected');
-    });
+    // let dtobj = {};
+    // socketio.on('connect', () => {
+    //   console.log("socketio.id: " + socketio.id); // Generate ID of client
+    //   //Change the id of client and send it to the server
+    //   dtobj.id = socketio.id;
+    //   dtobj.luz = [this.state.rcol,this.state.gcol, this.state.bcol];
+    //   socketio.emit('fromcube', dtobj);
+    //   });
+    //
+    // socketio.on('disconnect', () =>{
+    //   console.log('user disconnected');
+    // });
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -67,7 +68,7 @@ class ConnectCube extends Component {
       prevState.rcol = val;
 
       let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
-      socketio.emit('lightvalues', luz);
+      // socketio.emit('lightvalues', luz);
       return prevState;
     });
     // let luz = [this.state.rcol,this.state.gcol, this.state.bcol];
@@ -79,7 +80,7 @@ class ConnectCube extends Component {
       prevState.gcol = val;
 
       let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
-      socketio.emit('lightvalues', luz);
+      // socketio.emit('lightvalues', luz);
       return prevState;
     });
     // let luz = [this.state.rcol,this.state.gcol, this.state.bcol];
@@ -91,7 +92,7 @@ class ConnectCube extends Component {
       prevState.bcol = val;
 
       let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
-      socketio.emit('lightvalues', luz);
+      // socketio.emit('lightvalues', luz);
       return prevState;
     });
     // let luz = [this.state.rcol,this.state.gcol, this.state.bcol];
@@ -108,6 +109,11 @@ class ConnectCube extends Component {
                     sequenceL="7" sequenceR="0"
                     rX={this.state.rotx} rY={this.state.roty} rZ={this.state.rotz}
                     cR={this.state.rcol} cG={this.state.gcol} cB={this.state.bcol}/>
+        </div>
+        <div className="rgb-controllers">
+          <ColorSlider Color="red" Value="10" onUpdate={(...args) => this.onUpdateRCol(...args)} />
+          <ColorSlider Color="green" Value="10" onUpdate={(...args) => this.onUpdateGCol(...args)} />
+          <ColorSlider Color="blue" Value="10" onUpdate={(...args) => this.onUpdateBCol(...args)} />
         </div>
       </div>
     );

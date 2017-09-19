@@ -247,3 +247,12 @@
   margin-right:-20px;
   width:180px;
 }
+.sliderControl output{
+      margin-left: 30px;
+}
+
+.rgb-controllers{
+  margin: -200px 0 0 -10px;
+  clear: both;
+  float: left;
+}

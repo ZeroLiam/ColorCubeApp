@@ -25,14 +25,30 @@ class ColorSlider extends Component{
     }
   }
 
+  getColorLabel(color){
+
+    switch(color){
+      case 'red':
+        return 'R';
+        break;
+      case 'green':
+        return 'G';
+        break;
+      case 'blue':
+        return 'B';
+        break;
+      default:
+        return '';
+        break;
+    }
+  }
+
   render(){
     return(
-      <div>
         <div className="sliderControl">
-          <label htmlFor={this.props.Color}>{this.props.Color} </label>
+          <label htmlFor={this.props.Color}>{this.getColorLabel(this.props.Color)} </label>
           <input type="range" id={this.props.Color} min="0" max="255" value={this.state.intensityLvl} onChange={(...args) => this.onIntensityChange(...args)} />
-        </div>
-        <output htmlFor={this.props.Color} id="level">{this.state.intensityLvl}</output>
+          <output htmlFor={this.props.Color} id="level">{this.state.intensityLvl}</output>
       </div>
     );
   }
