@@ -47,12 +47,12 @@
  }
 
  .header-content img {
-   margin: 0 12px;
+   margin: 0;
  }
 
  .header-content h3 {
    display: inline-block;
-   margin: 4px auto;
+   margin: 4px 0 4px 14px;
  }
 
  /*
@@ -201,7 +201,7 @@
   height: 49px;
   display: block;
   position: absolute;
-  border: 1px solid black;
+  border: 1px solid #979797;
   line-height: 49px;
 }
 
