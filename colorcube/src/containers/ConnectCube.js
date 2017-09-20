@@ -34,9 +34,6 @@ class ConnectCube extends Component {
   }
 
   componentDidUpdate(prevProps, prevState){
-      console.log(this.state.rcol);
-      console.log(this.state.gcol);
-      console.log(this.state.bcol);
 
       // let luz = [this.state.rcol,this.state.gcol, this.state.bcol];
       // socketio.emit('lightvalues', luz);

@@ -18,14 +18,12 @@ class ColorSlider extends Component{
     if(!_.isEmpty(e.target.value)){
       this.setState(prevState =>{
         prevState.intensityLvl = value;
-
         return prevState;
       });
     }
   }
 
   getColorLabel(color){
-
     switch(color){
       case 'red':
         return 'R';
@@ -39,6 +37,7 @@ class ColorSlider extends Component{
   }
 
   render(){
+    // WARNING! THE MAX INPUT IN RANGE GOES BEYOND 255! BUG!!
     return(
         <div className="sliderControl">
           <label htmlFor={this.props.Color}>{this.getColorLabel(this.props.Color)} </label>
