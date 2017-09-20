@@ -13,7 +13,7 @@ class Header extends Component{
     }
   }
 
-  //openMenu
+  //open and close Menu
   clickMenu(e){
     let value = !this.state.openMenu;
 

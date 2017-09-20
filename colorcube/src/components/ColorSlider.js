@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import _ from 'lodash';
 import './../styles/components_styles.css';
 
@@ -30,16 +29,12 @@ class ColorSlider extends Component{
     switch(color){
       case 'red':
         return 'R';
-        break;
       case 'green':
         return 'G';
-        break;
       case 'blue':
         return 'B';
-        break;
       default:
         return '';
-        break;
     }
   }
 

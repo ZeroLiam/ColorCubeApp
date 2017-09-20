@@ -14,7 +14,7 @@ class Splash extends Component {
     return (
       <div className="splash-container">
         <div className="splash-component">
-          <img src={splashlogo} />
+          <img src={splashlogo} alt="Color Cube Logo for splash screen" />
         </div>
       </div>
     );

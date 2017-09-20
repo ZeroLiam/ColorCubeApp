@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
-import _ from 'lodash';
 import './../styles/components_styles.css';
 
 class CubeCSS extends Component{
@@ -17,7 +15,7 @@ class CubeCSS extends Component{
     let numMapping = 0;
     let jk = 1;
     let m2 = 0;
-    let leftcounter = 1;
+    // let leftcounter = 1;
     //Map each front-back wall
     let frontcounter = 0;
 
@@ -116,23 +114,23 @@ class CubeCSS extends Component{
           let bo = "bottom" + i;
 
           //Id by floor and side
-          let fl = "floor-";
-          let sd = "side-";
+          // let fl = "floor-";
+          // let sd = "side-";
 
           //Assign IDs for the sides
-          if(cr % 2 == 0){
+          if(cr % 2 === 0){
             sideMapping = sequenceUp;
           }else{
             sideMapping = sequenceDown;
           }
 
           //For each 4 spit rows every 4 cubes
-          if(4 * cr == i){
+          if(4 * cr === i){
             m4 = i;
             cr++;
           }
           //Spit floors every 16th cube
-          if(16 * rr == i){
+          if(16 * rr === i){
             m16 = i;
             rr++;
           }
@@ -140,29 +138,29 @@ class CubeCSS extends Component{
           //Frontcounter - For the green side
           //Changes every 16th cube
           frontcounter++;
-          if(i == (m16 + 1)){
+          if(i === (m16 + 1)){
             frontcounter = 1;
           }
 
           //Make the mapping for the cube
           //Floor has same mapping as arduino
           //if jk is odd then it maps to the left, otherwise to the right
-          if(jk % 2 == 1){
+          if(jk % 2 === 1){
             numMapping = leftMapping;
           }else{
             numMapping = rightMapping;
           }
-          if(2 * jk == i){
+          if(2 * jk === i){
             m2 = i;
             jk++;
           }
 
           //Define floors and walls for colors
           //Floor for red
-          floor3 = (numMapping == 4 || numMapping == 3) && (sideMapping == 7 || sideMapping == 0);
-          floor2 = (numMapping == 5 || numMapping == 2) && (sideMapping == 6 || sideMapping == 1);
-          floor1 = (numMapping == 6 || numMapping == 1) && (sideMapping == 5 || sideMapping == 2);
-          floor0 = (numMapping == 7 || numMapping == 0) && (sideMapping == 4 || sideMapping == 3);
+          floor3 = (numMapping === 4 || numMapping === 3) && (sideMapping === 7 || sideMapping === 0);
+          floor2 = (numMapping === 5 || numMapping === 2) && (sideMapping === 6 || sideMapping === 1);
+          floor1 = (numMapping === 6 || numMapping === 1) && (sideMapping === 5 || sideMapping === 2);
+          floor0 = (numMapping === 7 || numMapping === 0) && (sideMapping === 4 || sideMapping === 3);
           //Conditional for red
           red0 = rwall >=0 && rwall <= 63;
           red1 = rwall >=64 && rwall <= 127;
@@ -179,10 +177,10 @@ class CubeCSS extends Component{
           green2 = gwall >= 128 && gwall <= 191;
           green3 = gwall >= 192 && gwall <= 255;
           //Wall for blue
-          lado3 = (frontcounter == 1 || frontcounter == 5 || frontcounter == 9 || frontcounter == 13);
-          lado2 = (frontcounter == 2 || frontcounter == 6 || frontcounter == 10 || frontcounter == 14);
-          lado1 = (frontcounter == 3 || frontcounter == 7 || frontcounter == 11 || frontcounter == 15);
-          lado0 = (frontcounter == 4 || frontcounter == 8 || frontcounter == 12 || frontcounter == 16);
+          lado3 = (frontcounter === 1 || frontcounter === 5 || frontcounter === 9 || frontcounter === 13);
+          lado2 = (frontcounter === 2 || frontcounter === 6 || frontcounter === 10 || frontcounter === 14);
+          lado1 = (frontcounter === 3 || frontcounter === 7 || frontcounter === 11 || frontcounter === 15);
+          lado0 = (frontcounter === 4 || frontcounter === 8 || frontcounter === 12 || frontcounter === 16);
           //Conditional for blue
           blue0 = bwall >= 0 && bwall <= 63;
           blue1 = bwall >= 64 && bwall <= 127;
@@ -223,7 +221,7 @@ class CubeCSS extends Component{
           }
 
           //On every floor, left increases and right decreases
-          if(i == m16){
+          if(i === m16){
             leftMapping++;
             rightMapping--;
             sequenceDown--;
@@ -270,7 +268,7 @@ class CubeCSS extends Component{
           ri_translateZ += 50;
           le_translateZ -= 50;
 
-          if(i == m4){
+          if(i === m4){
             //change front
             fr_translateZ += 50;
             fr_translateX = 0;
@@ -293,7 +291,7 @@ class CubeCSS extends Component{
             bo_translateY -= 50;
           }
 
-          if(i == m16){
+          if(i === m16){
             //change front
             fr_translateY +=50;
             fr_translateX = 0;
