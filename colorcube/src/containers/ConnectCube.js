@@ -67,7 +67,7 @@ class ConnectCube extends Component {
     this.setState(prevState =>{
       prevState.rcol = val;
 
-      let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
+      // let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
       // socketio.emit('lightvalues', luz);
       return prevState;
     });
@@ -79,7 +79,7 @@ class ConnectCube extends Component {
     this.setState(prevState =>{
       prevState.gcol = val;
 
-      let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
+      // let luz = [prevState.rcol,prevState.gcol, prevState.bcol];
       // socketio.emit('lightvalues', luz);
       return prevState;
     });
