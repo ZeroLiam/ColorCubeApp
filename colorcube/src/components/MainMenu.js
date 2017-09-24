@@ -41,7 +41,7 @@ class MainMenu extends Component {
     const listMenu = this.state.menuItems.map((item, key) =>{
       return(
         <a key={key} href={item.link}>
-          <li id={item.id} className={window.location.pathname == item.link ? 'active' : 'deactive'}> {item.title} </li>
+          <li id={item.id} className={window.location.pathname === item.link ? 'active' : 'deactive'}> {item.title} </li>
         </a>
       )
     });
@@ -49,7 +49,7 @@ class MainMenu extends Component {
     return (
       <div className="main-menu main-menu-out">
         <div className="main-menu-logo">
-            <a href="/"><img src={menulogo} /></a>
+            <a href="/"><img src={menulogo} alt="Color Cube Logo" /></a>
         </div>
         <ul className="menu-link-list">{listMenu}</ul>
       </div>

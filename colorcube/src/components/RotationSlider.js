@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import _ from 'lodash';
 import './../styles/components_styles.css';
 
