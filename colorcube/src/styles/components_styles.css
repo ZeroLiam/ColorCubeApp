@@ -1,9 +1,25 @@
  /*
   * Filetype/name: .css/component_styles.css
   * Written by: Liselot Ramirez
-  * Purpose:  Have all styles for the components under /components
+  * Purpose:  Have all styles for the components under ./components
   *
   */
+
+  /*
+   * -------------------------------------------
+   * HOME CONTAINER
+   * -------------------------------------------
+   */
+  .Home{
+    display: flex;
+    flex-direction: row;
+    /*position:fixed !important;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;*/
+  }
 
  /*
   * -------------------------------------------
@@ -44,6 +60,8 @@
  .header-content-link{
    text-decoration: none;
    color: #555359;
+   min-width: 55%;
+   width: auto;
  }
 
  .header-content img {
@@ -52,7 +70,8 @@
 
  .header-content h3 {
    display: inline-block;
-   margin: 4px 0 4px 14px;
+   width: 100%;
+   margin: 4px 0 4px 10px;
  }
 
  /*
@@ -65,7 +84,8 @@
    float: left;
    margin-top: 85px;
    width: 290px;
-   min-height: 650px;
+   min-height: 70%;
+   height: 90%;
    background-color: #F9F9F9;
    box-shadow: 0px 0px 1px 1px #ccc;
  }
@@ -82,13 +102,15 @@
 
  .main-menu .main-menu-logo {
    width: 100%;
-   height: 160px;
+   height: 110px;
    background-color: #F4F4F4;
  }
 
  .main-menu-logo img {
-   margin: 15px 0 0 15px;
-   padding: 26px;
+   margin: 10px 22% 10px;
+   padding: 20px;
+   width:auto;
+   height: 40%;
  }
 
  .menu-link-list {
@@ -96,26 +118,27 @@
  }
 
  .menu-link-list li {
-   font-size: 1.2em;
+   font-size: 1em;
    list-style-type: none;
-   padding: 22px 0px 22px 38px;
+   padding: 20px 0px 20px 38px;
  }
 
  #connectcube {
    border-top: solid 1px #EFE8E8;
  }
 
- .menu-link-list a {
+/*General link setup */
+ a {
    text-decoration: none;
    color: #B9B6B6;
  }
 
- .menu-link-list .active {
+.active {
    text-decoration: none;
    color: #919191 !important;
  }
 
- .menu-link-list .deactive {
+.deactive {
    text-decoration: none;
    color: #B9B6B6!important;
  }
@@ -167,29 +190,35 @@
  * CUBE COMPONENT
  * -------------------------------------------
  */
+ .cube-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: -70%;
+ }
  .mainCube{
   float: left;
   clear: both;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: -600px 8px;
-  width: 385px;
-  height: 382px;
+  margin: 35% auto;
+  width: 106%;
+  height: 52%;
   background-color: #D8D8D8;
 }
 
 .container {
-  width: 200px;
-  height: 200px;
+  width: 50px;
+  height: 350px;
   position: relative;
   perspective: 1000px;
-  margin: 50px 0px 0px 40px;
+  margin: 30% 0px 0px 10%;
 }
 
 #cube {
-  width: 100%;
-  height: 100%;
+  width: 20%;
+  height: 20%;
   position: absolute;
   transform-style: preserve-3d;
   transform: rotateY(-22deg) rotateX(48deg) rotateZ(-31deg);
@@ -234,25 +263,138 @@
  */
 .sliderControl{
   width: 300px;
-  margin-top:10px;
+  margin-top:25px;
   text-align:  right;
 }
 
 .sliderControl label{
   font-weight: bold;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
 }
 
 .sliderControl input{
-  margin-left:10px;
-  margin-right:-20px;
-  width:180px;
+  margin: 4px -20px 0 10px;
+  height: 10px;
+  width:160px;
+  position: absolute;
 }
-.sliderControl output{
-      margin-left: 30px;
+
+#red::-webkit-slider-runnable-track, #green::-webkit-slider-runnable-track, #blue::-webkit-slider-runnable-track{
+  width: 100%;
+  height: 15px;
+  border: 1px solid transparent;
+  padding-right: 2px;
+}
+
+#red::-moz-range-track, #green::-moz-range-track, #blue::-moz-range-track {
+  width: 100%;
+  height: 15px;
+  border: 1px solid transparent;
+  padding-right: 2px;
+}
+
+#red::-webkit-slider-runnable-track {
+  background: url("./../assets/r.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+#red::-moz-range-track {
+  background: url("./../assets/r.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+#green::-webkit-slider-runnable-track {
+  background: url("./../assets/g.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+#green::-moz-range-track {
+  background: url("./../assets/g.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+#blue::-webkit-slider-runnable-track {
+  background: url("./../assets/b.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+#blue::-moz-range-track {
+  background: url("./../assets/b.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+/* Special styling for WebKit/Blink */
+#red::-webkit-slider-thumb, #green::-webkit-slider-thumb, #blue::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 10px solid rgba(0,0,0,0.85);
+  height: 14px;
+  width: 14px;
+  background: rgba(0,0,0,0.85) !important;
+  margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+#red::-moz-range-thumb, #green::-moz-range-thumb, #blue::-moz-range-thumb {
+  border: 10px solid rgba(0,0,0,0.85);
+  height: 14px;
+  width: 14px;
+  background: rgba(0,0,0,0.85) !important;
+}
+
+/* All the same stuff for IE */
+#red::-ms-thumb, #green::-ms-thumb, #blue::-ms-thumb {
+  border: 10px solid rgba(0,0,0,0.85);
+  height: 14px;
+  width: 14px;
+  background: rgba(0,0,0,0.85) !important;
+}
+
+.sliderControl output, .sliderControl output:after{
+  position: absolute;
+  margin: -2px 0 0 52%;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
 }
 
 .rgb-controllers{
-  margin: -200px 0 0 -10px;
-  clear: both;
-  float: left;
+  margin: -30% 0 0 -90%;
+}
+
+/*
+ * -------------------------------------------
+ * MENU CHOICE COMPONENT
+ * -------------------------------------------
+ */
+ .menuchoice{
+   padding: 20px 40px;
+  margin: 10px auto;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  width: 70%;
+  text-align: center;
+  background-color: #ffffff;
+ }
+
+.menu-list{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 35% auto auto -66%;
 }

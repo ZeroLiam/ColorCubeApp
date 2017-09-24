@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import menulogo from './../assets/colorcubelogoH.png';
+import _ from 'lodash';
 import "./../styles/components_styles.css";
 
 class MainMenu extends Component {
@@ -7,51 +9,31 @@ class MainMenu extends Component {
     super(props);
 
     this.state = {
-      menuItems: [
-        {
-          title: "Constructive",
-          id: "constructive",
-          link:"/constructive"
-        },
-        {
-          title: "Impressive",
-          id: "impressive",
-          link:"/impressive"
-        },
-        {
-          title: "Expressive",
-          id: "expressive",
-          link:"/expressive"
-        },
-        {
-          title: "Gallery",
-          id: "gallery",
-          link:"/gallery"
-        },
-        {
-          title: "Connect Color Cube",
-          id: "connectcube",
-          link: "/connectcube"
-        }
-      ]
+
     }
   }
 
+  listMenu(){
+
+    return(
+        _.map(this.props.source, (value, key)=>{
+          return (
+            <Link key={key} to={value.link}>
+              <li id={value.id} className={window.location.pathname === value.link ? 'active' : 'deactive'}> {value.title} </li>
+            </Link>
+          )
+        })
+    );
+  }
+
   render() {
-    const listMenu = this.state.menuItems.map((item, key) =>{
-      return(
-        <a key={key} href={item.link}>
-          <li id={item.id} className={window.location.pathname === item.link ? 'active' : 'deactive'}> {item.title} </li>
-        </a>
-      )
-    });
 
     return (
       <div className="main-menu main-menu-out">
         <div className="main-menu-logo">
-            <a href="/"><img src={menulogo} alt="Color Cube Logo" /></a>
+            <Link to="/"><img src={menulogo} alt="Color Cube Logo" /></Link>
         </div>
-        <ul className="menu-link-list">{listMenu}</ul>
+        <ul className="menu-link-list">{this.listMenu()}</ul>
       </div>
     );
   }

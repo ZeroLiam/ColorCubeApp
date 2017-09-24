@@ -157,10 +157,10 @@ class CubeCSS extends Component{
 
           //Define floors and walls for colors
           //Floor for red
-          floor3 = (numMapping === 4 || numMapping === 3) && (sideMapping === 7 || sideMapping === 0);
-          floor2 = (numMapping === 5 || numMapping === 2) && (sideMapping === 6 || sideMapping === 1);
-          floor1 = (numMapping === 6 || numMapping === 1) && (sideMapping === 5 || sideMapping === 2);
-          floor0 = (numMapping === 7 || numMapping === 0) && (sideMapping === 4 || sideMapping === 3);
+          floor0 = (numMapping == 7 || numMapping == 0) && (sideMapping == 4 || sideMapping == 3);
+          floor1 = (numMapping == 6 || numMapping == 1) && (sideMapping == 5 || sideMapping == 2);
+          floor2 = (numMapping == 5 || numMapping == 2) && (sideMapping == 6 || sideMapping == 1);
+          floor3 = (numMapping == 4 || numMapping == 3) && (sideMapping == 7 || sideMapping == 0);
           //Conditional for red
           red0 = rwall >=0 && rwall <= 63;
           red1 = rwall >=64 && rwall <= 127;

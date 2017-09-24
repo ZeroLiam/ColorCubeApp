@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import logo from './../assets/CuboLogo.svg';
 import MainMenu from './MainMenu';
 import $ from 'jquery';
 import './../styles/components_styles.css';
+import custommenu from './../lib/menu.json';
 
 class Header extends Component{
   constructor(props) {
     super(props);
 
     this.state = {
-      openMenu: false
+      openMenu: false,
+      menuItems: []
     }
+  }
+
+  componentDidMount(){
+    this.setState({menuItems: custommenu.items});
   }
 
   //open and close Menu
@@ -35,18 +42,18 @@ class Header extends Component{
         <div className="header-menu" onClick={(...args) => this.clickMenu(...args)} >
             <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
-        <a href="/" className="header-content-link">
+        <Link to="/" className="header-content-link">
           <div className="header-content">
             <img src={logo} className="App-logo" alt="logo" />
             <h3>{this.props.title}</h3>
             </div>
-        </a>
+        </Link>
         <div className="header-dropdown">
             <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </div>
 
       </div>
-        <MainMenu />
+        <MainMenu source={this.state.menuItems} />
       </div>
     );
   }
