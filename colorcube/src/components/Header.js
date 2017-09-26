@@ -27,12 +27,16 @@ class Header extends Component{
 
     this.setState({openMenu: value});
 
-    if(value){
-      $(".main-menu").removeClass("main-menu-out");
-      $(".main-menu").addClass("main-menu-in");
+    if(value){//fa-bars
+      $(".header-menu .fa").removeClass("active");
+      $(".header-menu .fa").addClass("deactive");
+        $(".main-menu").removeClass("main-menu-out");
+        $(".main-menu").addClass("main-menu-in");
     }else{
-      $(".main-menu").removeClass("main-menu-in");
-      $(".main-menu").addClass("main-menu-out");
+      $(".header-menu .fa").removeClass("deactive");
+      $(".header-menu .fa").addClass("active");
+        $(".main-menu").removeClass("main-menu-in");
+        $(".main-menu").addClass("main-menu-out");
     }
   }
 
@@ -43,9 +47,13 @@ class Header extends Component{
     this.setState({openMore: value});
 
     if(value){
+      $(".header-dropdown .fa").removeClass("fa-chevron-down");
+      $(".header-dropdown .fa").addClass("fa-chevron-up");
       $(".about-more").removeClass("about-more-out");
       $(".about-more").addClass("about-more-in");
     }else{
+    $(".header-dropdown .fa").removeClass("fa-chevron-up");
+    $(".header-dropdown .fa").addClass("fa-chevron-down");
       $(".about-more").removeClass("about-more-in");
       $(".about-more").addClass("about-more-out");
     }
