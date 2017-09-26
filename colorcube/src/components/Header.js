@@ -12,6 +12,7 @@ class Header extends Component{
 
     this.state = {
       openMenu: false,
+      openMore: false,
       menuItems: []
     }
   }
@@ -35,6 +36,21 @@ class Header extends Component{
     }
   }
 
+  //open and close More (chevron arrows)
+  clickMore(e){
+    let value = !this.state.openMore;
+
+    this.setState({openMore: value});
+
+    if(value){
+      $(".about-more").removeClass("about-more-out");
+      $(".about-more").addClass("about-more-in");
+    }else{
+      $(".about-more").removeClass("about-more-in");
+      $(".about-more").addClass("about-more-out");
+    }
+  }
+
   render(){
     return(
       <div className="header-component">
@@ -48,7 +64,7 @@ class Header extends Component{
             <h3>{this.props.title}</h3>
             </div>
         </Link>
-        <div className="header-dropdown">
+        <div className="header-dropdown" onClick={(...args) => this.clickMore(...args)} >
             <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </div>
 

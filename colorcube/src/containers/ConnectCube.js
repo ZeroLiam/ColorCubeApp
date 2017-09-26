@@ -9,7 +9,7 @@ class ConnectCube extends Component {
     return (
       <div className="Home">
         <Header title="Connect Cube" />
-        <CubeContainer />
+        <CubeContainer type="connect" />
       </div>
     );
   }

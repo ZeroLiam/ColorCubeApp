@@ -88,6 +88,8 @@
    height: 90%;
    background-color: #F9F9F9;
    box-shadow: 0px 0px 1px 1px #ccc;
+   position: relative;
+   z-index: 10;
  }
 
  .main-menu-out {
@@ -142,6 +144,35 @@
    text-decoration: none;
    color: #B9B6B6!important;
  }
+
+ /*
+  * -------------------------------------------
+  * ABOUT MORE COMPONENT
+  * -------------------------------------------
+  */
+  .about-more {
+    width: 80%;
+    min-width: 320px;
+    min-height: 750px;
+    height: 100%;
+    background-color: #F9F9F9;
+    position: relative;
+    z-index: 9;
+    margin: 80px auto 0;
+    padding: 10px;
+  }
+
+  .about-more-out {
+    transform: translateY(-190%);
+    transition: all 0.8s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .about-more-in {
+    transform: translateY(-89%);
+    transition: all 0.8s;
+    transition-timing-function: ease-in-out;
+  }
 
  /*
   * -------------------------------------------

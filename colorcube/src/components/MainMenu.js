@@ -5,16 +5,9 @@ import _ from 'lodash';
 import "./../styles/components_styles.css";
 
 class MainMenu extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-
-    }
-  }
-
+//Show Menu list
   listMenu(){
-
     return(
         _.map(this.props.source, (value, key)=>{
           return (
