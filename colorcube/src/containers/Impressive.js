@@ -1,11 +1,33 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import Header from "./../components/Header";
 import CubeContainer from "./../components/CubeContainer";
 import AboutMore from './../components/AboutMore';
+import MenuChoice from "./../components/MenuChoice";
 import "./../styles/components_styles.css";
 import img3 from './../assets/ex/003.jpg';
+import custommenu from './../lib/menu.json';
 
-class Impressive extends Component {
+class Impressive extends Component {constructor(props) {
+  super(props);
+
+  this.state = {
+    menuItems: []
+  }
+}
+
+componentDidMount(){
+  this.setState({menuItems: custommenu.items[1].submenu});
+}
+
+getMenu(){
+    return (
+      _.map(this.state.menuItems, (value, key)=>{
+        return <MenuChoice key={key} val={value.title} url={value.link} />;
+      })
+  );
+}
+
   render() {
     return (
       <div className="Home">
@@ -37,13 +59,15 @@ class Impressive extends Component {
             <p className="text-center">
                 <img src={img3} alt="003.jpg" />
             </p>
-            
+
             <p className="text-left">
             It is important to say that Itten suggested this color contrast based on his color circle. Nevertheless in this case order of the colors in the circle used for the interactions is one based in the theory Harold Küpers, who made some critics on Itten’s theory. He considers as primary colors Red, Green and Blue for the additive mix and Cyan, Yellow and Magenta for the subtractive mix. Furthermore the order of the colors in the circle suggested coincide with the order of the colors in the RGB model, and are useful to prove Itten&#8217;s Impression Theory.
             </p>
         </AboutMore>
 
-        <CubeContainer type="impressive" />
+        <div className="menu-list">
+          {this.getMenu()}
+        </div>
       </div>
     );
   }

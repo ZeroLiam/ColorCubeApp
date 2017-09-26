@@ -493,3 +493,9 @@
     width: 100%;
     height: auto;
 }
+
+.gallery-mockup{
+  position: relative;
+  top: 80px;
+  overflow-y: scroll;
+}
