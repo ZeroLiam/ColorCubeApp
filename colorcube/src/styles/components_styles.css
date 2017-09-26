@@ -175,6 +175,7 @@
   .about-more {
     width: 80%;
     min-width: 320px;
+    min-height: 570px;
     height: auto;
     background-color: #F9F9F9;
     position: absolute;
