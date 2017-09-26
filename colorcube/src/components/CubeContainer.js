@@ -87,6 +87,9 @@ class CubeContainer extends Component {
   }
 
   render() {
+    let sample = {
+      backgroundColor: `rgba(${this.state.rcol},${this.state.gcol},${this.state.bcol},1)`
+    }
     return (
       <div className="cube-container">
           <div className="mainCube">
@@ -100,6 +103,8 @@ class CubeContainer extends Component {
             <ColorSlider Color="red" Value="10" onUpdate={(...args) => this.onUpdateRCol(...args)} />
             <ColorSlider Color="green" Value="10" onUpdate={(...args) => this.onUpdateGCol(...args)} />
             <ColorSlider Color="blue" Value="10" onUpdate={(...args) => this.onUpdateBCol(...args)} />
+          </div>
+          <div style={{backgroundColor: sample.backgroundColor}} className="color-sample">
           </div>
       </div>
     );

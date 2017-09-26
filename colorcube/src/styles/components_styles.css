@@ -96,6 +96,7 @@
    position: fixed;
    left: -295px;
    z-index: 10;
+    overflow-y: scroll;
  }
 
  .main-menu-out {
@@ -312,6 +313,15 @@
   padding: 2px;
 }
 
+.color-sample{
+  width: 90px;
+  height: 90px;
+  border: 1px solid #DEDEDE;
+  position: relative;
+  left: 242px;
+  top: -100px;
+}
+
 /*
  * -------------------------------------------
  * SLIDER COMPONENT
@@ -430,7 +440,7 @@
 }
 
 .rgb-controllers{
-  margin: -30% 0 0 -90%;
+  margin: -30% 0 0 -95%;
 }
 
 /*
@@ -453,6 +463,8 @@
   flex-direction: column;
   width: 70%;
   margin: 35% auto auto -66%;
+  position: relative;
+  left: 290px;
 }
 
 

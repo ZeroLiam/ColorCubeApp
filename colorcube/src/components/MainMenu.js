@@ -5,14 +5,31 @@ import _ from 'lodash';
 import "./../styles/components_styles.css";
 
 class MainMenu extends Component {
+submenuList(src){
+  console.log(src);
+  return(
 
+      _.map(src, (value, key)=>{
+         <ul>
+          <Link key={key} to={value.link}>
+            <li id={value.id}>
+              {value.title}
+            </li>
+          </Link>
+         </ul>
+      })
+
+    );
+}
 //Show Menu list
   listMenu(){
     return(
         _.map(this.props.source, (value, key)=>{
           return (
             <Link key={key} to={value.link}>
-              <li id={value.id} className={window.location.pathname === value.link ? 'active' : 'deactive'}> {value.title} </li>
+              <li id={value.id} className={window.location.pathname === value.link ? 'active' : 'deactive'}>
+                {value.title}
+              </li>
             </Link>
           )
         })
